@@ -1,0 +1,18 @@
+<div style="text-align:center">
+  <div>
+  <button *ngIf="!showCamera" (click)="toggleCamera()">Launch the LoFive Selfie Photobooth</button>
+  <div style="background-color: lightgray; padding-top: 20px;" *ngIf="showCamera">
+    <button class="button-primary" (click)="toggleCamera()">Hide the LoFive Selfie Photobooth</button>
+    <h2><b>LoFive Photobooth</b></h2>
+    <webcam [height]="500" [width]="500"
+    (initError)="handleInitError($event)"></webcam>
+    <div style="margin-top:-20px; transform:rotate(180deg) scaleX(-1)">
+    <webcam [height]="500" [width]="500"
+    (initError)="handleInitError($event)"></webcam>
+    </div>
+    <br>
+    <button class="button-primary">CAPTURE LOFIVE</button>
+  </div>
+  <br/>
+  </div>
+  </div>
